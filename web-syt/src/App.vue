@@ -1,8 +1,7 @@
 <template>
-  <hosptialTop></hosptialTop>
   <div>
+    <hosptialTop></hosptialTop>
   </div>
-
 </template>
 <script setup lang="ts">
 import hosptialTop from '@/components/hospital_top/index.vue'
@@ -11,3 +10,4 @@ import hosptialTop from '@/components/hospital_top/index.vue'
 <style scoped>
 
 </style>
+S

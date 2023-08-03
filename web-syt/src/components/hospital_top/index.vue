@@ -27,6 +27,7 @@
   z-index: 999;
   width: 100%;
   height: 70px;
+  border: 1px solid red;
 
   display: flex;
   justify-content: center;
