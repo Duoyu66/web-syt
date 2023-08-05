@@ -29,9 +29,9 @@
     align-items: center;
     font-size: 14px;
     .right{
-        span{
-            margin: 0px 5px;
-        }
+      span{
+        margin: 0px 5px;
+      }
     }
   }
 }

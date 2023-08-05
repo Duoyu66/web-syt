@@ -11,7 +11,6 @@
         <!-- 如果没有用户名字:显示登录注册 -->
         <p class="login"  >登录/注册</p>
         <!-- 如果有用户信息展示用户信息 -->
-
       </div>
     </div>
   </div>
@@ -27,7 +26,6 @@
   z-index: 999;
   width: 100%;
   height: 70px;
-  border: 1px solid red;
 
   display: flex;
   justify-content: center;
