@@ -23,7 +23,9 @@
 </template>
 
 <script setup>
-
+defineOptions({
+  name: 'region'
+})
 </script>
 
 <style scoped lang="scss">

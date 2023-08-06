@@ -2,7 +2,7 @@ import axios from "axios";
 import {ElMessage} from "element-plus";
 //1、对axios二次封装
 const requests = axios.create({
-    baseURL:'/',
+    baseURL:'/api',
     timeout: 5000,
 })
 //2、配置请求拦截器

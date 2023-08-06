@@ -8,7 +8,7 @@
     <el-row gutter="20">
       <el-col :span="20">
         <!--        等级子组件-->
-        <Level/>
+       <Level> </Level>
         <!--        地区-->
         <Region/>
         <!--        医院卡片信息-->
@@ -45,7 +45,9 @@ import Region from "./region/index.vue"
 import Card from "./card/index.vue"
 import {onMounted, reactive, ref} from "vue";
 import {reqHospital} from "../../api/home";
-
+defineOptions({
+  name: 'home'
+})
 let pageNo = ref(1)
 //分页器一页展示多少条数据
 let pageSize = ref(10)

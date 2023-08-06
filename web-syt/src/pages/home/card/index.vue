@@ -29,6 +29,9 @@
 </template>
 
 <script setup>
+defineOptions({
+  name: 'card'
+})
 const props = defineProps([
     'hospitalInfo'
 ])

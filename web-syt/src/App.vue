@@ -16,6 +16,9 @@
 
 </template>
 <script setup lang="ts">
+defineOptions({   //-----------------------
+  name: 'app'
+})
 import hosptialTop from '@/components/hospital_top/index.vue'
 import hospitalBottom from '@/components/hospital_bottom/index.vue'
 import {onMounted} from "vue";
