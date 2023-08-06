@@ -3,6 +3,7 @@
   <div   class="card">
     <el-card
         shadow="hover"
+        @click="geDetail"
     >
       <div class="content">
         <div class="left">
@@ -29,12 +30,22 @@
 </template>
 
 <script setup>
+import {useRouter} from "vue-router";
+
 defineOptions({
   name: 'card'
 })
-const props = defineProps([
+let $router = useRouter()
+let props = defineProps([
     'hospitalInfo'
 ])
+//点击卡片跳转到详情页
+const geDetail=()=>{
+  console.log(props.hospitalInfo)
+  $router.push({
+    path:'/hospital'
+  })
+}
 </script>
 
 <style scoped lang="scss">

@@ -1,6 +1,7 @@
 <template>
   <div class="search">
     <el-autocomplete
+        @select="goDetail"
         v-model="hosname"
         :fetch-suggestions="fetchData"
         placeholder="请输入医院名称"
@@ -16,6 +17,7 @@ import {ref} from "@vue/runtime-core";
 defineOptions({
   name: 'search'
 })
+let $router = useRouter()
 import type {HospitalInfo,Content} from "@/api/home/types.ts";
 //引入element-plus图标
 import {Search} from "@element-plus/icons-vue"
@@ -25,10 +27,11 @@ let hosname = ref('')
 const fetchData=async (keyword,cd)=>{
   let result = await reqHospitalInfo(keyword)
   console.log("123",result)
-  //整理数据,变成饿了么需要的数据
+  //整理数据,变成饿了么需要的数据 格式为  value:xxx
   let showData =  result.data.map(item=>{
     return {
-      value:item.hosname
+      value:item.hosname,//展示医院的名字
+      hoscode:item.hoscode//存储医院的编码
     }
   })
 
@@ -36,7 +39,16 @@ const fetchData=async (keyword,cd)=>{
 }
 //引入请求方法
 import {reqHospitalInfo} from "@/api/home";
+import {useRouter} from "vue-router";
+//点击搜索关键词跳转相关详情页
+const goDetail=(item)=>{
+  console.log("888",item)
+  console.log("888",item.hoscode)
+  $router.push({
+    path:'/hospital'
+  })
 
+}
 </script>
 
 <style scoped lang="scss">
