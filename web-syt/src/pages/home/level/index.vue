@@ -3,12 +3,9 @@
     <h1>医院</h1>
     <div class="content">
       <div class="left">等级</div>
-      <ul class="hospital">
-        <li class="active">全部</li>
-        <li>三级甲等</li>
-        <li>三级乙等</li>
-        <li>三级乙等</li>
-        <li>三级乙等</li>
+      <ul class="hospital" >
+        <li :class="{active:activeFlag===''}">全部</li>
+        <li v-for="item in levelArr" :key="item.id" :class="{active:activeFlag===item.value}" @click="changeLevel(item.value)">{{item.name}}</li>
 
       </ul>
     </div>
@@ -34,6 +31,14 @@ const getLevel=async ()=>{
     levelArr.value = result.data
   }
   console.log()
+}
+//定义是否高亮的变量
+let activeFlag =ref('')
+
+const changeLevel=(levelValue)=>{
+  console.log(levelValue)
+  //高亮响应式数据存储leve数值
+  activeFlag.value = levelValue;
 }
 </script>
 

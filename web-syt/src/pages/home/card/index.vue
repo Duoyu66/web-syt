@@ -64,6 +64,7 @@ const props = defineProps([
   }
 }
 .card{
+  cursor: pointer;
   margin: 10px 0;
 }
 </style>
