@@ -4,7 +4,7 @@
       <div class="left">地区</div>
       <ul class="right">
         <li :class="{active:activeFlag.value==''}">全部</li>
-        <li v-for="(item,index) in regionArr" :key="item.id" :class="{active:activeFlag==item.value}" @click="changeRegion(item.value)">{{item.name}}</li>
+        <li v-for="(item,index) in regionArr" :key="item.id" :class="{active:activeFlag===item.value}" @click="changeRegion(item.value)">{{item.name}}</li>
 
       </ul>
 
@@ -35,7 +35,8 @@ const getRegionArr= async ()=>{
 }
 const changeRegion=(regionValue)=>{
   console.log(regionValue)
-  regionValue.value = regionValue
+  activeFlag.value = regionValue
+  console.log("此时的:",regionValue.value,regionValue,regionValue.value===regionValue)
 }
 </script>
 
