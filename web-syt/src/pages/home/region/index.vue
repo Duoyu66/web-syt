@@ -33,9 +33,11 @@ const getRegionArr= async ()=>{
     regionArr.value =result.data
   }
 }
+let $emit = defineEmits(['getRegion'])
 const changeRegion=(regionValue)=>{
   console.log(regionValue)
   activeFlag.value = regionValue
+  $emit('getRegion',regionValue)
   console.log("此时的:",regionValue.value,regionValue,regionValue.value===regionValue)
 }
 </script>

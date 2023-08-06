@@ -8,9 +8,9 @@
     <el-row gutter="20">
       <el-col :span="20">
         <!--        等级子组件-->
-       <Level> </Level>
+       <Level @getLevel="getLevel"/>
         <!--        地区-->
-        <Region/>
+        <Region @getRegion="getRegion"/>
         <!--        医院卡片信息-->
         <div class="hospital">
           <Card
@@ -43,7 +43,7 @@ import Search from "./search/index.vue"
 import Level from "./level/index.vue"
 import Region from "./region/index.vue"
 import Card from "./card/index.vue"
-import {onMounted, reactive, ref} from "vue";
+import {onMounted, reactive, ref, watch} from "vue";
 import {reqHospital} from "../../api/home";
 defineOptions({
   name: 'home'
@@ -56,6 +56,10 @@ let total = ref(0)
 
 //存储已有的医院的数组
 let hasHospitalArr = ref([])
+//存储医院等级的变量
+let hostype = ref('')
+//存储医院地区代码的变量
+let districtCode = ref('')
 //组件挂载完毕先发请求
 onMounted(() => {
   getHsopitalInfo();
@@ -63,8 +67,12 @@ onMounted(() => {
 //获取已有的医院的数据
 const getHsopitalInfo =async () => {
   //获取已有的医院的数据:默认获取第一页、一页十个医院的数据
-  // let result =reactive({})
-  let result = await reqHospital(pageNo.value, pageSize.value)
+  let result = await reqHospital(
+      pageNo.value,
+      pageSize.value,
+      hostype.value,
+      districtCode.value
+  )
   // reqHospital(pageNo.value, pageSize.value).then(res => {
   //   result = res;
   // })
@@ -88,6 +96,18 @@ const sizeChange = () => {
   //再次发请求获取医院的数据
   getHsopitalInfo();
 };
+//获取子组件的等级代码(组件自定义事件)
+const getLevel=(level)=>{
+  hostype.value = level
+  getHsopitalInfo()
+  console.log("父亲获得的信息是:",level)
+}
+//获取子组件地区代码
+const getRegion=(regionValue)=>{
+  districtCode.value = regionValue
+  getHsopitalInfo()
+}
+
 </script>
 
 <style scoped lang="scss">

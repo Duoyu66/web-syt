@@ -15,8 +15,7 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
 app.component('HospitalTop',HospitalTop)
 app.component('HospitalBottom',HospitalBottom)
-import {reqHospitalLevelAndRegion} from "@/api/home";
-reqHospitalLevelAndRegion('beijin')
+
 
 app.use(router)
 //国际化文件

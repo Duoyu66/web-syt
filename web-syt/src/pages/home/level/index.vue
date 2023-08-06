@@ -34,12 +34,18 @@ const getLevel=async ()=>{
 }
 //定义是否高亮的变量
 let activeFlag =ref('')
-
+let $emit = defineEmits(['getLevel'])
 const changeLevel=(levelValue)=>{
   console.log(levelValue)
+
   //高亮响应式数据存储leve数值
   activeFlag.value = levelValue;
+  //触发自定义事件
+  $emit('getLevel',levelValue)
+  console.log("点击了")
 }
+//定义emit
+
 </script>
 
 <style scoped lang="scss">
