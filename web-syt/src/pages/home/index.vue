@@ -12,11 +12,12 @@
         <!--        地区-->
         <Region @getRegion="getRegion"/>
         <!--        医院卡片信息-->
-        <div class="hospital">
+        <div class="hospital" v-if="hasHospitalArr.length>0">
           <Card
               class="item"
               v-for="(item,index) in hasHospitalArr" :key="index" :hospitalInfo="item"></Card>
         </div>
+        <el-empty v-else description="暂无数据"></el-empty>
         <!--        分页器-->
         <div class="demo-pagination-block">
           <el-pagination
