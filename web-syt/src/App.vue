@@ -18,6 +18,13 @@
 <script setup lang="ts">
 import hosptialTop from '@/components/hospital_top/index.vue'
 import hospitalBottom from '@/components/hospital_bottom/index.vue'
+import {onMounted} from "vue";
+import request from "@/utils/request";
+onMounted(()=>{
+  request.get('/api/hosp/hospital/1/2').then((res)=>{
+    console.log("返回的数据是",res)
+  })
+})
 </script>
 
 <style scoped lang="scss">

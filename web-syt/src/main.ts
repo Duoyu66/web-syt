@@ -11,10 +11,7 @@ import 'element-plus/dist/index.css'
 import HospitalTop from './components/hospital_top/index.vue'
 import HospitalBottom from './components/hospital_bottom/index.vue'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
-import {reqGetHospital} from "@/api";
 
-
-reqGetHospital()
 
 app.component('HospitalTop',HospitalTop)
 app.component('HospitalBottom',HospitalBottom)
