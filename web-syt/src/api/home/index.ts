@@ -1,5 +1,6 @@
 import request from "@/utils/request";
 import type {HospitalResponseData} from "@/api/home/types";
+
 //通过枚举管理首页模块的接口地址
 enum API{
 //    获取已有的医院的数据接口地址
