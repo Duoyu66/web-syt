@@ -45,7 +45,7 @@ const goDetail=(item)=>{
   console.log("888",item)
   console.log("888",item.hoscode)
   $router.push({
-    path:'/hospital'
+    path:'/hospital/register'
   })
 
 }

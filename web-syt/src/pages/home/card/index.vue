@@ -41,9 +41,13 @@ let props = defineProps([
 ])
 //点击卡片跳转到详情页
 const geDetail=()=>{
-  console.log(props.hospitalInfo)
+  console.log("props",props.hospitalInfo)
+  // console.log("card的code是：",item.code)
   $router.push({
-    path:'/hospital'
+    path:'/hospital/register',
+    query: {
+      hoscode: props.hospitalInfo.hoscode
+    }
   })
 }
 </script>
