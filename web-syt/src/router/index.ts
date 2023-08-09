@@ -45,6 +45,20 @@ export default createRouter({
                     name:'search',
                     component:()=>import('@/pages/hospital/search/index.vue')
                 },
+                {
+                    path: 'register_step1',
+                    component: () => import('@/pages/hospital/register/register_step1.vue'),
+                    meta:{
+                        title:'预约第一步'
+                    }
+                },
+                {
+                    path: 'register_step2',
+                    component: () => import('@/pages/hospital/register/register_step2.vue'),
+                    meta:{
+                        title:'预约第二步'
+                    }
+                }
 
             ]
         },

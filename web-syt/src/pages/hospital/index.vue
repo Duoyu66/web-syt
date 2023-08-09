@@ -60,11 +60,15 @@ const handleClose = (key, keyPath) => {
 }
 const changeActive=(path)=>{
   $router.push({
-    path:path
+    path,
+    query:{hospital:$route.query.hoscode}
   })
 }
 onMounted(()=>{
+  //获取详情也
   detailStore.getHospital($route.query.hoscode)
+  //获取科室
+  detailStore.getHospitalList($route.query.hoscode)
 })
 </script>
 
@@ -73,6 +77,7 @@ onMounted(()=>{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  //border: 1px solid;
   .menu{
     width: 20%;
   }

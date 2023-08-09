@@ -5,7 +5,9 @@
 </template>
 
 <script setup lang="ts">
-
+defineOptions({
+  name: 'close'
+})
 </script>
 
 <style scoped lang="scss">
